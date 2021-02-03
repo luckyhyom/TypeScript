@@ -19,9 +19,15 @@
 
     /*
     * String Literal Types
+    * Obj, primitive, value 자체를 속성으로.
     */
     type Name = 'name';
     let hyominName = 'name';
     type JSON = 'json';
     const json: JSON = 'json';
+
+    type Boal = true;
+    const isCat: Boal = true;
+
+
 }

@@ -22,6 +22,15 @@ class CoffeeMachine {
                // ':' is 타입..  '=' is 값..
     // getCoffeeSort메소드가 아닌데 값을 알 수 있다. 상관없는건가?
     coffeeSort:'ame'|'ess';
+
+    private constructor(){} // private 하면 new로 만들지 못함.
+                                        
+                                        // 생성자가 아닌, static으로 인스턴스를 만드는 이유.
+    static makeMachine():CoffeeMachine{ // 생성주기 관리: 싱글톤패턴,인스턴스갯수제한,등 컨틀롤 가능
+        return new CoffeeMachine;       // 로직 캡슐화: 인스턴스 생성시 복잡한 로직이 있다면 간단하게 만들어줌
+
+    }
+
     makeCoffee(shot:number):string {
         // this.shotGram=7;
         if(this.coffeeBeans===undefined){
@@ -44,6 +53,7 @@ class CoffeeMachine {
         }
     }
 
+    // 행위를 통해 상태를 결정한다. 고양이의 기분을 직접 바꿀 수 없다. 놀아줘야한다.
     refillBeans(coffeeBeans:CoffeeBean){
         if(this.coffeeBeans?.gram){
             this.coffeeBeans.gram+=coffeeBeans.gram;
@@ -57,7 +67,7 @@ class CoffeeMachine {
     }
 }
 
-let ms1:CoffeeMachine = new CoffeeMachine;
+// let ms1:CoffeeMachine = new CoffeeMachine;
 console.log(ms1.coffeeSort);
 // console.log(ms1.coffeeBeans);
 console.log(ms1.shotGram);

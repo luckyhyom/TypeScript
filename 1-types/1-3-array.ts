@@ -16,4 +16,6 @@
     student[1] // 26
     const [name,age] = student; // object destructure
     console.log(name,age);
+    // tuple의 좋은 예 : react의 useState..
+    // 보통은 interface, class를 쓸 수 있다면 쓰는게 좋음
 }

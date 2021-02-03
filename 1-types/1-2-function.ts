@@ -44,4 +44,10 @@
          console.log(message);
      }
      printMessage();
+
+     // Rest parameter
+     function addNumbers(...numbers:number[]):number {
+         return numbers.reduce((a,b)=>a+b);
+     }
+     console.log(addNumbers(1,2));
 }

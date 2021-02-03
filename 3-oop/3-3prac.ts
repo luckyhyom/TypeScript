@@ -11,10 +11,12 @@
             if(num<0) throw Error();
             this.internalAge = num;
         }
-        constructor(private firstName: string, public lastName: string) {
+
+        // private firstName ='';
+        constructor(private firstName: string, public lastName: string) { // 알아서 상태값으로 저장.
+            // this.firstName = firstName;
         }
     }
-
     const user = new User('kim','hyom');
     console.log(user.age)
     user.age = 100;
