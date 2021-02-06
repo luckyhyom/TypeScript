@@ -1,55 +1,57 @@
 {
-  type PositionType = {
-    x: number;
-    y: number;
-  };
-  interface PositionInterface {
-    x: number;
-    y: number;
-  }
+ type PositionType = {
+     x:number;
+     y:number;
+ } 
+ interface PositionInterface{
+     x:number;
+     y:number;
+ }
 
-  // object ★
-  const obj1: PositionType = {
-    x: 1,
-    y: 1,
-  };
-  const obj2: PositionInterface = {
-    x: 1,
-    y: 1,
-    z: 1,
-  };
+ // ojbect
+ const obj1: PositionType = { 
+     x:1,
+     y:1,
+ }
 
-  // class ★
-  class Pos1 implements PositionType {
-    x: number;
-    y: number;
-  }
-  class Pos2 implements PositionInterface {
-    x: number;
-    y: number;
-  }
+ const obj2: PositionInterface = {
+    x:1,
+    y:1,
+ }
 
-  // Extends
-  interface ZPositionInterface extends PositionInterface {
-    z: number;
-  }
-  type ZPositionType = PositionType & { z: number };
+ // class
+ class Pos1 implements PositionType{
+     x:number;
+     y:number;
+ }
 
-  // 😆 only interfaces can be merged.
-  interface PositionInterface {
-    z: number;
-  }
+ class Pos2 implements PositionInterface{
+     x:number;
+     y:number;
+ }
 
-  // type PositionType {
-  // }
+ // Extexnds
+ interface ZPositionInterface extends PositionInterface{
+     z:number;
+ }
+ type ZPositionType = PositionType & {z:number};
 
-  // 😆 Type aliases can use computed properties
-  type Person = {
-    name: string;
-    age: number;
-  };
-  type Name = Person['name']; // string
+ interface ZPositionInterface {
+     z:number;
+ }
 
-  type NumberType = number;
-  type Direction = 'left' | 'right';
+ // type PositionType{     
+ // }
+
+ // type aliases can use computed properties
+ type Person ={
+     name: string;
+     age: number;
+ }
+ type Name = Person['name']; // string
+
+ type NumberType = number;
+ type Direction = 'left'|'right';
+
+
 }

@@ -38,7 +38,7 @@
             return result;
         };
     }
-    
+    // const impl = new StackImpl<number>();
     const impl = new StackImpl();
     impl.push('First');
     impl.push(2);
